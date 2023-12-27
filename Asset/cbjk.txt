@@ -1,0 +1,1 @@
+This app is for answering quizzes, the quizz is shown one at a time and the answers are selected. if the wrong answer is selected, the user is shown the right answer and after attempting all the answers the total score is displayed.
