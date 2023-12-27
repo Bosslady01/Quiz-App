@@ -13,19 +13,19 @@ const questions = [
                 answers: [
                         {
                                 text: 'document.getElementById("myButton").addEventListener("click", myFunction);',
-                                correct: true,
+                                correct: true
                         },
                         {
                                 text: "myButton.onClick = myFunction;",
-                                correct: false,
+                                correct: false
                         },
                         {
                                 text: 'addEventListener("click", myFunction);',
-                                correct: false,
+                                correct: false
                         },
                         {
                                 text: 'myButton.addEventListener("click", myFunction);',
-                                correct: false,
+                                correct: false
                         },
                 ],
         },
@@ -47,15 +47,7 @@ const questions = [
                         { text: "a reserved keyword", correct: false },
                 ],
         },
-        {
-                question: "How do you comment out multiple lines in JavaScript?",
-                answers: [
-                        { text: " /* comment */", correct: true },
-                        { text: "// comment //", correct: false },
-                        { text: "-- comment --", correct: false },
-                        { text: "<!-- comment -->", correct: false },
-                ],
-        },
+        
         {
                 question: "Which method is used to change the CSS style of an HTML element using JavaScript?",
                 answers: [
@@ -70,19 +62,19 @@ const questions = [
                 answers: [
                         {
                                 text: " It includes padding and border in the element's total width and height.",
-                                correct: true,
+                                correct: true
                         },
                         {
                                 text: "It excludes padding and border from the element's total width and height.",
-                                correct: false,
+                                correct: false
                         },
                         {
                                 text: "It only applies to the border element.",
-                                correct: false,
+                                correct: false
                         },
                         {
                                 text: "It has no effect on the box model.",
-                                correct: false,
+                                correct: false
                         },
                 ],
         },
@@ -109,16 +101,16 @@ const questions = [
                 answers: [
                         {
                                 text: " It is used to store custom data private to the page or application.",
-                                correct: true,
+                                correct: true
                         },
                         { text: " It defines a hyperlink.", correct: false },
                         {
                                 text: "It specifies the document's character encoding.",
-                                correct: false,
+                                correct: false
                         },
                         {
                                 text: "It controls the layout of the page.",
-                                correct: false,
+                                correct: false
                         },
                 ],
         },
@@ -145,12 +137,12 @@ const questions = [
                 answers: [
                         {
                                 text: "It declares a block of code to be executed.",
-                                correct: false,
+                                correct: false
                         },
                         { text: " It defines a function.", correct: false },
                         {
                                 text: " It handles exceptions and errors.",
-                                correct: true,
+                                correct: true
                         },
                         { text: " It creates a loop.", correct: false },
                 ],
@@ -160,19 +152,19 @@ const questions = [
                 answers: [
                         {
                                 text: " It provides access to the browser's session storage.",
-                                correct: false,
+                                correct: false
                         },
                         {
                                 text: "It allows for asynchronous requests.",
-                                correct: false,
+                                correct: false
                         },
                         {
                                 text: " It stores key/value pairs in a web browser with no expiration time.",
-                                correct: true,
+                                correct: true
                         },
                         {
                                 text: " It defines the local file structure.",
-                                correct: false,
+                                correct: false
                         },
                 ],
         },
@@ -186,35 +178,23 @@ const questions = [
                 ],
         },
         {
-                question: "How do you link an external CSS file to an HTML document?",
-                answers: [
-                        { text: '<link src="style.css">', correct: false },
-                        { text: '<style src="style.css">', correct: false },
-                        {
-                                text: '<link rel="stylesheet" href="style.css">',
-                                correct: true,
-                        },
-                        { text: '<style link="style.css">', correct: false },
-                ],
-        },
-        {
                 question: 'What does the CSS property "display: none;" do?',
                 answers: [
                         {
                                 text: "It makes the element invisible but still occupies space.",
-                                correct: false,
+                                correct: false
                         },
                         {
                                 text: " It removes the element from the document flow.",
-                                correct: true,
+                                correct: true
                         },
                         {
                                 text: "It sets the element's display to the default value.",
-                                correct: false,
+                                correct: false
                         },
                         {
                                 text: " It changes the element's font size to zero.",
-                                correct: false,
+                                correct: false
                         },
                 ],
         },
@@ -224,7 +204,7 @@ const questions = [
                         { text: "function myFunction() {}", correct: false },
                         {
                                 text: "const myFunction = function() {};",
-                                correct: false,
+                                correct: false
                         },
                         { text: "var myFunction = () => {};", correct: false },
                         { text: "function = myFunction() {};", correct: true },
@@ -235,45 +215,31 @@ const questions = [
                 answers: [
                         {
                                 text: "It sets the background color of the viewport.",
-                                correct: false,
+                                correct: false
                         },
                         {
                                 text: " It defines the size of the viewport for responsive design.",
-                                correct: true,
+                                correct: true
                         },
                         {
                                 text: " It specifies the font size of the viewport.",
-                                correct: false,
+                                correct: false
                         },
                         {
                                 text: " It controls the visibility of the viewport.",
-                                correct: false,
+                                correct: false
                         },
                 ],
         },
-        {
-                question: "Which of the following is a valid way to include an external JavaScript file in an HTML document?",
-                answers: [
-                        { text: '<script href="script.js"></script>', correct: false },
-                        { text: '<script link="script.js"></script>', correct: false },
-                        { text: '<script src="script.js"></script>', correct: false },
-                        { text: '<script file="script.js"></script>', correct: true },
-                ],
-        },
+        
 ];
 const questionElement = document.getElementById("question");
-const answerButton = document.getElementById("answer-buttons");
+const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 
 let currentQuestionIndex = 0;
 let score = 0;
 
-function startQuiz(){
-	currentQuestionIndex = 0;
-	score = 0; 
-	nextButton.innerHTML = "Next";
-	showQuestion();
-}
 
 function showQuestion(){
 	resetState();
@@ -285,14 +251,26 @@ function showQuestion(){
 		const button = document.createElement("button");
 		button.innerHTML = answer.text;
 		button.classList.add("btn");
-		answerButton.appendChild(button);
-	})
+		answerButtons.appendChild(button);
+		if(answer.correct){
+			button.dataset.correct = answer.correct;
+		}
+		button.addEventListener("click", selectAnswer);
+	});
 }
+
+function startQuiz(){
+	currentQuestionIndex = 0;
+	score = 0; 
+	nextButton.innerHTML = "Next";
+	showQuestion();
+}
+
 
 function resetState () {
 	nextButton.style.display = "none";
-	while(answerButton.firstChild){
-		answerButton.removeChild(answerButton.firstChild);
+	while(answerButtons.firstChild){
+		answerButtons.removeChild(answerButtons.firstChild);
 	}
 }
 
@@ -305,7 +283,7 @@ function selectAnswer (e) {
 	} else{
 		selectedBtn.classList.add("incorrect");
 	}
-	Array.from(answerButton.children).forEach(button=>{
+	Array.from(answerButtons.children).forEach(button=>{
 		if(button.dataset.correct === "true"){
 			button.classList.add("correct");
 		}
