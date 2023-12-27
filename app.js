@@ -319,5 +319,4 @@ nextButton.addEventListener("click",()=>{
 	}
 })
 
-
 startQuiz();
