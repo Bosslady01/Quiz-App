@@ -262,7 +262,7 @@ const questions = [
         },
 ];
 const questionElement = document.getElementById("question");
-const answerButtons = document.getElementById("answer-buttons");
+const answerButton = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 
 let currentQuestionIndex = 0;
@@ -285,27 +285,27 @@ function showQuestion(){
 		const button = document.createElement("button");
 		button.innerHTML = answer.text;
 		button.classList.add("btn");
-		answerButtons.appendChild(button);
+		answerButton.appendChild(button);
 	})
 }
 
 function resetState () {
 	nextButton.style.display = "none";
-	while(answerButtons.firstChild){
-		answerButtons.removeChild(answerButton.firstChild);
+	while(answerButton.firstChild){
+		answerButton.removeChild(answerButton.firstChild);
 	}
 }
 
 function selectAnswer (e) {
 	const selectedBtn = e.target;
 	const isCorrect = selectedBtn.dataset.correct === "true";
-	if("isCorrect"){
+	if(isCorrect){
 		selectedBtn.classList.add("correct");
 		score++;
 	} else{
 		selectedBtn.classList.add("incorrect");
 	}
-	Array.from(answerButtons.children).forEach(button=>{
+	Array.from(answerButton.children).forEach(button=>{
 		if(button.dataset.correct === "true"){
 			button.classList.add("correct");
 		}
