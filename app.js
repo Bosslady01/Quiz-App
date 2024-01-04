@@ -1,3 +1,12 @@
+const startPage = document.getElementsByClassName("startContainer");
+const ruleBox = document.getElementsByClassName("buttonContainer");
+const myButton = document.getElementsByClassName("startButton");
+const questionElement = document.getElementById("question");
+const answerButtons = document.getElementById("answer-buttons");
+const nextButton = document.getElementById("next-btn");
+
+
+
 const questions = [
         {
                 question: "What is the correct way to declare a variable in JavaScript?",
@@ -233,9 +242,7 @@ const questions = [
         },
         
 ];
-const questionElement = document.getElementById("question");
-const answerButtons = document.getElementById("answer-buttons");
-const nextButton = document.getElementById("next-btn");
+
 
 let currentQuestionIndex = 0;
 let score = 0;
