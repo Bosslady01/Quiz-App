@@ -4,7 +4,7 @@ const myButton = document.getElementsByClassName("startButton");
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
-
+const timer = document.getElementById("timer");
 
 
 const questions = [
@@ -325,5 +325,6 @@ nextButton.addEventListener("click",()=>{
 		startQuiz();
 	}
 })
+
 
 startQuiz();
